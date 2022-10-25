@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   end
   root to: 'group#index'
   
-
+  
   # Defines the root path route ("/")
   #root "articles#index"
 end
