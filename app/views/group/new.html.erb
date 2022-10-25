@@ -1,2 +1,18 @@
-<h1>Group#new</h1>
-<p>Find me in app/views/group/new.html.erb</p>
+<div class="min_nav">
+  <%= link_to "", group_index_path, class: "fa fa-chevron-left fa-lg" %>
+  <h3 class="mb-3">Categories</h3>
+</div>
+<%= form_with model: @group, url: group_index_path, method: :post, data: { turbo: false } do |form| %>
+  <div class="mb-3">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: 'form-control', placeholder: 'Category name' %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :icon %>
+    <%= form.url_field :icon, class: 'form-control', placeholder: 'Icon url' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.submit 'Create category', class: 'btn btn-primary' %>
+  </div>
+<% end %>
