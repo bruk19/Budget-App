@@ -2,15 +2,11 @@ class GroupController < ApplicationController
   before_action :authenticate_user!, except: :index
 
   def index
-    if user_signed_in?
       @groups = current_user.groups
-    else
-      render 'users/splash'
-    end
   end
 
   def new
-    @group = current_user.groups.new
+    @group = Group.new
   end
 
   def create
