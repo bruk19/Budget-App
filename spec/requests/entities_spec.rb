@@ -1,18 +1,17 @@
 require 'rails_helper'
 
-RSpec.describe "Entities", type: :request do
-  describe "GET /index" do
-    it "returns http success" do
-      get "/entities/index"
+RSpec.describe 'Entities', type: :request do
+  describe 'GET /index' do
+    it 'returns http success' do
+      get '/entities/index'
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "GET /new" do
-    it "returns http success" do
-      get "/entities/new"
+  describe 'GET /new' do
+    it 'returns http success' do
+      get '/entities/new'
       expect(response).to have_http_status(:success)
     end
   end
-
 end
