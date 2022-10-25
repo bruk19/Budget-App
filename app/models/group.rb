@@ -6,4 +6,7 @@ class Group < ApplicationRecord
 
     validates :name, presence: true, length: { in: 4..250 }
     validates :icon, presence: true, length: { in: 4..250 }
+
+    validates :icon, format: { with: %r{\.(gif|jpg|png|ico|jpeg)\Z}i, 
+    message: 'must be a URL for GIF, JPG, PNG, ICO or Jpeg image.' }
 end
