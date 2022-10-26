@@ -32,4 +32,3 @@ RSpec.describe 'Entities', type: :request do
       end
     end
 end
-
