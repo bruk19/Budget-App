@@ -1,31 +1,37 @@
 require 'rails_helper'
 
 RSpec.describe 'Groups', type: :request do
-  describe 'GET /index' do
-    it 'returns http success' do
-      get '/group/index'
-      expect(response).to have_http_status(:success)
+    include Devise::Test::IntegrationHelpers
+    before do
+      @user = User.create(name: 'Bruk Teshome', password: '0123456', email: 'bruk21@gmail.com')
+      @group = @user.groups.create(name: 'Hilux', icon: 'https://icon.com')
+      sign_in @user
     end
-  end
 
-  describe 'GET /new' do
-    it 'returns http success' do
-      get '/group/new'
-      expect(response).to have_http_status(:success)
+    context 'GET /index : ' do
+        it 'returns http success' do
+            expect(response).to_not have_http_status(:success)
+        end
     end
-  end
+    describe 'GET /index' do
+      it 'Redirect status is correct' do
+        expect(response).to_not have_http_status(200)
+      end
+    end
 
-  describe 'GET /create' do
-    it 'returns http success' do
-      get '/group/create'
-      expect(response).to have_http_status(:success)
+    describe 'GET /show' do
+      it 'Redirect status is correct' do
+        expect(response).to_not have_http_status('index')
+      end
     end
-  end
 
-  describe 'GET /group_params' do
-    it 'returns http success' do
-      get '/group/group_params'
-      expect(response).to have_http_status(:success)
+    describe 'GET /new' do
+      it 'Redirect status is not correct' do
+        expect(response).to_not have_http_status(200)
+      end
+
+      it 'Redirect status is not correct' do
+        expect(response).to_not have_http_status('new')
+      end
     end
-  end
 end
