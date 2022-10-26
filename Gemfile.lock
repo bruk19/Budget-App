@@ -250,7 +250,7 @@ DEPENDENCIES
   capybara
   debug
   devise
-  ffi
+  ffi (~> 1.15)
   importmap-rails
   jbuilder
   pg (~> 1.1)
