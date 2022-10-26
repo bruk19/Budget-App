@@ -14,7 +14,7 @@
 
 ## Live Demo (not available yet)
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://budgetify-ap.herokuapp.com/)
 
 
 ## Getting Started
