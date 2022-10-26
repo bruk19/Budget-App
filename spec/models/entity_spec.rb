@@ -3,13 +3,12 @@ require 'rails_helper'
 RSpec.describe Entity, type: :model do
   subject do
     user = User.create(name: 'Bruk Teshome', password: '0123456', email: 'bruk@gmail.com')
-    Entity.new(name: 'Hilux', amount: '2', user: user)
+    Entity.new(name: 'Hilux', amount: '2', user:)
   end
 
-  before {subject.save}
+  before { subject.save }
 
   context 'Test for validation : ' do
-   
     it 'Name should be present' do
       subject.name = 'Hilux'
       expect(subject).to be_valid
