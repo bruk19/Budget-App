@@ -14,7 +14,7 @@
 
 ## Live Demo (not available yet)
 
-[Live Demo Link](https://budgetify-ap.herokuapp.com/)
+[Live Demo Link](https://budget01app.herokuapp.com/)
 
 
 ## Getting Started
@@ -69,9 +69,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+>I would like to give my heartfelt gratitude to [Gregoire Vella on Behance](https://www.behance.net/gregoirevella) for this amazing Design. 
 
 ## 📝 License
 
