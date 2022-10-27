@@ -12,9 +12,14 @@
 - Libraries: Cancancan, Devise
 - Technologies: Git, Gitflow, Linters, Github, PostgreSql
 
-## Live Demo (not available yet)
+## Live Demo 
 
 [Live Demo Link](https://budget01app.herokuapp.com/)
+
+## Video presentation
+
+- [loom](https://www.loom.com/share/6593215a30d0483f8037916a41f57e9f)
+
 
 
 ## Getting Started
