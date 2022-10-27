@@ -1,0 +1,34 @@
+<div class="min_nav">
+  <%= link_to "", group_index_path, class: "fa fa-chevron-left fa-lg" %>
+  <h3 class="mb-3">Transactions</h3>
+</div>
+<div class="card mb-2">
+  <div class="card-body d-flex justify-content-between align-items-center">
+    <%= image_tag @group.icon || "http://localhost:3000/users/sign_up.jpg", class: 'card_icon' %>
+    <div>
+      <p class="fw-semibold"><%= @group.name %></p>
+      <p class="fw-light"><%= l @group.created_at, format: :long %></p>
+    </div>
+    <p class="fw-bolder">
+      $<%= @group.entities.sum(&:amount) %>
+    </p>
+  </div>
+</div>
+<% if @entities.count > 0 %>
+  <% @entities.order(created_at: :desc).limit(4).each do |entity| %>
+    <div class="card mb-2">
+      <div class="card-body d-flex justify-content-between align-items-center">
+        <div>
+          <p class="fw-semibold"><%= entity.name %></p>
+          <p class="fw-light"><%= l entity.created_at, format: :long %></p>
+        </div>
+        <p class="fw-bolder">
+          $<%= entity.amount %>
+        </p>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <p>You have no Transactions and new to continue</p>
+<% end %>
+<%= link_to 'Add Transaction', new_group_entity_path(@group), class: "btn btn-primary fixed-bottom" %>

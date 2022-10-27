@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-md bg-light">
+  <div class="container-fluid">
+    <h3 class="navbar-brand">App_Budget</h3>
+    <button class="navbar-toggler btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <% if user_signed_in? %>          
+          <li class="nav-item"> 
+            <span class="nav-link me-5 text-light"><i class="fa fa-user me-2"></i><%= current_user.name %></span>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete }, class: 'btn btn-sm btn-outline-warning' %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to 'Sign Up', new_user_registration_path, class: 'nav-link text-light' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Sign In', new_user_session_path, class: 'nav-link text-light' %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>

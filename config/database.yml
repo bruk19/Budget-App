@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: rails
+  password: 1234
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: hellorails_test
+  host: 'localhost'
+
+test:
+  <<: *default
+  database: hellorails_test
+
+
+production:
+  <<: *default
+  database: hellorails_test
+  username: rails
+  password: <%= ENV["BUDGET_APP_DATABASE_PASSWORD"] %>
+  host: localhost

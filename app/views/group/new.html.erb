@@ -1,0 +1,29 @@
+<div class="min_nav">
+  <%# display all errors %>
+  <% if @group.errors.any? %>
+    <div class="alert alert-danger">
+      <ul>
+        <% @group.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <% end %>
+  <%= link_to "", group_index_path, class: "fa fa-chevron-left fa-lg" %>
+  <h3 class="mb-3">Categories</h3>
+</div>
+<%= form_with model: @group, url: group_index_path, method: :post, data: { turbo: false } do |form| %>
+  <div class="mb-3">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: 'form-control', placeholder: 'Category name' %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :icon %>
+    <%= form.url_field :icon, class: 'form-control', placeholder: 'Icon url' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.submit 'Create category', class: 'btn btn-primary' %>
+  </div>
+<% end %>
